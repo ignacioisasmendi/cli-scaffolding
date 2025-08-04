@@ -25,7 +25,7 @@ console.log(chalk.green(`\n🚀 Creando proyecto NestJS "${projectName}"...\n`))
 await execa('npx', ['@nestjs/cli', 'new', projectName, '--package-manager', 'npm'], { stdio: 'inherit' });
 
 process.chdir(projectName);
-copyBaseFiles();
+//copyBaseFiles();
 
 const dependencies = [];
 if (swagger) dependencies.push('@nestjs/swagger', 'swagger-ui-express');
@@ -42,7 +42,7 @@ if (swagger) copyTemplate('swagger');
 
 console.log(chalk.green(`\n✅ Proyecto ${projectName} generado exitosamente.`));
 
-function copyTemplate(folder) {
+/* function copyTemplate(folder) {
   const src = path.join(templateDir, folder);
   const dest = process.cwd();
   fs.readdirSync(src).forEach(file => {
@@ -56,4 +56,4 @@ function copyBaseFiles() {
   fs.readdirSync(src).forEach(file => {
     fs.copyFileSync(path.join(src, file), path.join(dest, file));
   });
-}
+} */
