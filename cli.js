@@ -22,7 +22,7 @@ const argv = yargs(hideBin(process.argv))
 const { projectName, swagger, logger, typeorm } = argv;
 
 console.log(chalk.green(`\n🚀 Creando proyecto NestJS "${projectName}"...\n`));
-await execa('npx', ['@nestjs/cli', 'new', projectName], { stdio: 'inherit' });
+await execa('npx', ['@nestjs/cli', 'new', projectName, '--package-manager', 'npm'], { stdio: 'inherit' });
 
 process.chdir(projectName);
 copyBaseFiles();
